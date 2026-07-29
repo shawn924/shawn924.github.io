@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Li Zexuan — Personal Homepage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #fff;
+  --text: #333;
+  --text2: #666;
+  --border: #e8e8e8;
+  --accent: #2c5aa0;
+  --accent-light: #e8f0fa;
+  --sidebar-w: 280px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg); color: var(--text);
+  line-height: 1.7; -webkit-font-smoothing: antialiased;
+}
+
+/* ── Top nav ── */
+.masthead {
+  background: #fff; border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 100;
+}
+.masthead__inner {
+  max-width: 1100px; margin: 0 auto; padding: 0 32px;
+  display: flex; align-items: center; justify-content: space-between; height: 54px;
+}
+.masthead__brand { font-weight: 700; font-size: 1.05rem; color: var(--text); text-decoration: none; }
+.masthead__links { display: flex; gap: 24px; list-style: none; }
+.masthead__links a {
+  color: var(--text2); text-decoration: none; font-size: 0.85rem; font-weight: 500;
+  transition: color 0.15s;
+}
+.masthead__links a:hover { color: var(--accent); }
+
+/* ── Main layout ── */
+.page {
+  max-width: 1100px; margin: 0 auto; padding: 40px 32px;
+  display: flex; gap: 48px;
+}
+.page__content { flex: 1; min-width: 0; }
+
+/* ── Sidebar ── */
+.sidebar {
+  width: var(--sidebar-w); flex-shrink: 0;
+  position: sticky; top: 80px; align-self: flex-start;
+}
+.author__avatar {
+  width: 140px; height: 140px; border-radius: 50%; margin-bottom: 20px;
+  background: linear-gradient(135deg, #2c5aa0, #4a90d9);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3.5rem; color: #fff;
+}
+.author__name { font-size: 1.3rem; font-weight: 700; margin-bottom: 4px; }
+.author__title { font-size: 0.88rem; color: var(--text2); margin-bottom: 2px; }
+.author__org  { font-size: 0.85rem; color: var(--text2); margin-bottom: 14px; }
+.author__urls { list-style: none; font-size: 0.82rem; display: flex; flex-direction: column; gap: 4px; }
+.author__urls li { color: var(--text2); }
+.author__urls a { color: var(--accent); text-decoration: none; }
+.author__urls a:hover { text-decoration: underline; }
+
+/* ── Content ── */
+.page__title { font-size: 1.8rem; font-weight: 700; margin-bottom: 20px; border-bottom: 2px solid var(--border); padding-bottom: 12px; }
+.content-section { margin-bottom: 48px; }
+.content-section h2 { font-size: 1.25rem; font-weight: 700; margin-bottom: 16px; color: var(--text); }
+.content-section p { color: var(--text2); font-size: 0.92rem; margin-bottom: 12px; line-height: 1.75; }
+
+/* ── Projects ── */
+.project-list { display: flex; flex-direction: column; gap: 16px; }
+.project-item {
+  border: 1px solid var(--border); border-radius: 8px; padding: 20px 22px;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.project-item:hover { border-color: #ccc; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.project-item h3 { font-size: 0.98rem; font-weight: 600; margin-bottom: 6px; }
+.project-item h3 a { color: var(--text); text-decoration: none; }
+.project-item h3 a:hover { color: var(--accent); }
+.project-item .proj-desc { color: var(--text2); font-size: 0.84rem; line-height: 1.6; margin-bottom: 10px; }
+.project-item .proj-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.proj-tags span {
+  font-size: 0.68rem; font-weight: 500; padding: 2px 10px; border-radius: 4px;
+  background: var(--accent-light); color: var(--accent);
+}
+
+/* ── Education ── */
+.edu-list { list-style: none; }
+.edu-list li { padding: 12px 0; border-bottom: 1px solid var(--border); }
+.edu-list li:last-child { border-bottom: none; }
+.edu-list .edu-degree { font-weight: 600; font-size: 0.95rem; }
+.edu-list .edu-school { color: var(--text2); font-size: 0.85rem; }
+.edu-list .edu-year  { color: var(--accent); font-size: 0.78rem; font-weight: 500; }
+
+/* ── Courseworks compact ── */
+.cw-compact { display: flex; flex-direction: column; gap: 8px; }
+.cw-row {
+  display: flex; align-items: baseline; gap: 12px; padding: 8px 0;
+  border-bottom: 1px solid var(--border); font-size: 0.88rem;
+}
+.cw-row:last-child { border-bottom: none; }
+.cw-row .cw-code { font-weight: 600; color: var(--accent); font-size: 0.75rem; min-width: 100px; }
+.cw-row .cw-name { color: var(--text); }
+.cw-row .cw-name a { color: var(--text); text-decoration: none; }
+.cw-row .cw-name a:hover { color: var(--accent); }
+
+/* ── Footer ── */
+.page__footer {
+  border-top: 1px solid var(--border); text-align: center; padding: 24px 32px;
+  color: var(--text2); font-size: 0.78rem;
+}
+.page__footer a { color: var(--text2); }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .page { flex-direction: column; }
+  .sidebar { position: static; width: 100%; }
+  .author__avatar { width: 100px; height: 100px; font-size: 2.5rem; }
+  .masthead__links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ TOP NAV ═══════════ -->
+<header class="masthead">
+  <div class="masthead__inner">
+    <a href="/" class="masthead__brand">Li Zexuan</a>
+    <ul class="masthead__links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#courseworks">Courseworks</a></li>
+      <li><a href="https://github.com/shawn924/Li_Zexuan" target="_blank" rel="noopener">Repo</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ═══════════ PAGE ═══════════ -->
+<div class="page">
+
+  <!-- Main content (left) -->
+  <main class="page__content">
+
+    <section id="about" class="content-section">
+      <h1 class="page__title">About me</h1>
+      <p>
+        I'm a Data Science master's student at <strong>Utrecht University</strong>, passionate about turning data into actionable insight. My work spans <strong>quantitative finance</strong>, <strong>natural language processing</strong>, <strong>spatial modeling</strong>, and <strong>large language model fine-tuning</strong>.
+      </p>
+      <p>
+        I enjoy operating across the full data stack — from wrangling raw datasets and designing experiments, to training models on consumer GPUs and communicating results. Currently exploring reinforcement learning from human feedback (RLHF) and building high-quality SFT datasets.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2>Education</h2>
+      <ul class="edu-list">
+        <li>
+          <div class="edu-degree">MSc Data Science</div>
+          <div class="edu-school">Utrecht University, Netherlands</div>
+          <div class="edu-year">2024 — Present</div>
+        </li>
+        <li>
+          <div class="edu-degree">BSc Data Science</div>
+          <div class="edu-school">Utrecht University, Netherlands</div>
+          <div class="edu-year">2021 — 2024</div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="projects" class="content-section">
+      <h2>Projects</h2>
+      <div class="project-list">
+
+        <div class="project-item">
+          <h3><a href="https://github.com/shawn924/Li_Zexuan/tree/main/Crypto_TFT_vs_TST_Forecast" target="_blank" rel="noopener">TFT vs TST — Multi-Asset Crypto Forecasting</a></h3>
+          <p class="proj-desc">Temporal Fusion Transformer vs Time Series Transformer on 260 cryptocurrency pairs with 38 features. TST outperforms TFT on all metrics; neither beats the random-walk baseline.</p>
+          <div class="proj-tags"><span>PyTorch Lightning</span><span>Transformers</span><span>Time Series</span><span>Probabilistic Forecasting</span></div>
+        </div>
+
+        <div class="project-item">
+          <h3><a href="https://github.com/shawn924/Li_Zexuan/tree/main/Risk_Project" target="_blank" rel="noopener">Portfolio Risk Analysis — Three VaR Methods</a></h3>
+          <p class="proj-desc">Mag-7 portfolio risk quantified via Historical Simulation, Parametric VaR, and Monte Carlo. Kupiec POF backtesting, rolling 252-day VaR, and risk decomposition — all implemented from scratch.</p>
+          <div class="proj-tags"><span>NumPy</span><span>SciPy</span><span>yfinance</span><span>Risk Management</span><span>Monte Carlo</span></div>
+        </div>
+
+        <div class="project-item">
+          <h3><a href="https://github.com/shawn924/Li_Zexuan/tree/main/LoRA" target="_blank" rel="noopener">Qwen2.5-1.5B QLoRA Fine-tuning</a></h3>
+          <p class="proj-desc">4-bit QLoRA on RTX 4060 8G — 18K Python code instructions, ~2 hours. Model shifted from educational verbosity to clean, production-ready engineering code.</p>
+          <div class="proj-tags"><span>QLoRA</span><span>PEFT</span><span>bitsandbytes</span><span>LLM</span><span>Code Generation</span></div>
+        </div>
+
+        <div class="project-item">
+          <h3><a href="https://github.com/shawn924/Li_Zexuan/tree/main/Spatial_Project_Cellular_Automata" target="_blank" rel="noopener">Cellular Automata — Housing Density Simulation</a></h3>
+          <p class="proj-desc">CA model forecasting housing density in Utrecht under TOD policy. Logistic regression transitions trained on 2010–2015 data, validated on 2017, projected to 2040.</p>
+          <div class="proj-tags"><span>Spatial Analysis</span><span>Cellular Automata</span><span>Logistic Regression</span><span>Python</span></div>
+        </div>
+
+        <div class="project-item">
+          <h3><a href="https://github.com/shawn924/Li_Zexuan/tree/main/olist_project" target="_blank" rel="noopener">Olist E-commerce Data Analysis</a></h3>
+          <p class="proj-desc">End-to-end analysis of Brazilian e-commerce data — order delays, regional trends, seller performance. Full pipeline from SQL to visualization.</p>
+          <div class="proj-tags"><span>Pandas</span><span>SQL</span><span>Matplotlib</span><span>Data Visualization</span></div>
+        </div>
+
+        <div class="project-item">
+          <h3><a href="https://github.com/shawn924/Li_Zexuan/tree/main/Ecommerce_rfmproject" target="_blank" rel="noopener">RFM-I Precision Marketing Framework</a></h3>
+          <p class="proj-desc">Enhanced RFM segmentation with real-time Intent signals to surface "High-Intent Hesitators" — users most responsive to marketing.</p>
+          <div class="proj-tags"><span>Marketing Analytics</span><span>Segmentation</span><span>A/B Testing</span><span>Python</span></div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="courseworks" class="content-section">
+      <h2>Courseworks</h2>
+      <div class="cw-compact">
+        <div class="cw-row"><span class="cw-code">INFOMTALC</span><span class="cw-name"><a href="https://github.com/shawn924/Li_Zexuan/tree/main/Crypto_TFT_vs_TST_Forecast" target="_blank" rel="noopener">TFT vs TST: Crypto Forecasting</a> — Final Group Project</span></div>
+        <div class="cw-row"><span class="cw-code">INFOMTALC</span><span class="cw-name"><a href="https://github.com/shawn924/Li_Zexuan/tree/main/INFOMTALC_Assignment1_chessbot" target="_blank" rel="noopener">Transformer Chess Player</a> — Midterm Assignment</span></div>
+        <div class="cw-row"><span class="cw-code">INFOMTMA</span><span class="cw-name"><a href="https://github.com/shawn924/Li_Zexuan/tree/main/biden_trump_sarcasm_project" target="_blank" rel="noopener">NLP Political Discourse Analysis</a> — Final Group Project</span></div>
+        <div class="cw-row"><span class="cw-code">INFOMVABD</span><span class="cw-name"><a href="https://github.com/shawn924/Li_Zexuan/tree/main/Visual_Group" target="_blank" rel="noopener">Sailor Shift: Music Network Analysis</a> — Final Group Project</span></div>
+        <div class="cw-row"><span class="cw-code">INFOMDWR</span><span class="cw-name"><a href="https://github.com/shawn924/Li_Zexuan/tree/main/Infomwr%20Assignment%201" target="_blank" rel="noopener">Database Design & Querying</a> — Assignment 1</span></div>
+        <div class="cw-row"><span class="cw-code">INFOMDWR</span><span class="cw-name"><a href="https://github.com/shawn924/Li_Zexuan/tree/main/Infomwr%20Assignment%202" target="_blank" rel="noopener">Data Integration & Preparation</a> — Assignment 2</span></div>
+        <div class="cw-row"><span class="cw-code">INFOMDWR</span><span class="cw-name"><a href="https://github.com/shawn924/Li_Zexuan/tree/main/Infomwr%20Assignment%203" target="_blank" rel="noopener">Supervised Learning Competition</a> — Assignment 3</span></div>
+        <div class="cw-row"><span class="cw-code">INFOMDWR</span><span class="cw-name"><a href="https://github.com/shawn924/Li_Zexuan/tree/main/Infomwr%20Assignment%204" target="_blank" rel="noopener">Text Clustering</a> — Assignment 4</span></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Sidebar (right) -->
+  <aside class="sidebar">
+    <div class="author__avatar">&#x1f9e0;</div>
+    <div class="author__name">Li Zexuan</div>
+    <div class="author__title">Data Scientist &amp; ML Engineer</div>
+    <div class="author__org">MSc Data Science<br>Utrecht University</div>
+    <ul class="author__urls">
+      <li>&#9993; zexuan.li@outlook.com</li>
+      <li><a href="https://github.com/shawn924" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/zexuan-li-99b8b9332" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
+  </aside>
+
+</div>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div class="page__footer">
+  <footer>
+    &copy; 2026 Li Zexuan &middot; Powered by <a href="https://pages.github.com/">GitHub Pages</a>
+  </footer>
+</div>
+
+</body>
+</html>
