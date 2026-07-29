@@ -126,7 +126,7 @@ body {
     <ul class="links">
       <li>&#9993; leezehint@gmail.com</li>
       <li><a href="https://github.com/shawn924/Li_Zexuan" target="_blank" rel="noopener">GitHub</a></li>
-      <li><a href="https://www.linkedin.com/in/zexuan-li221" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://www.linkedin.com/in/zexuan-lia54652172" target="_blank" rel="noopener">LinkedIn</a></li>
     </ul>
   </aside>
 
@@ -216,30 +216,47 @@ body {
       <div class="panel" id="panel-projects">
 
         <div class="proj">
-          <h4>ROGII Well Geology Intelligent Prediction</h4>
-          <div class="meta">Kaggle Competition · Bronze Medal &middot; May — Aug 2026</div>
-          <p class="desc">Dual-path heterogeneous fusion (LightGBM/CatBoost/Ridge stacking + particle filter probabilistic inference) on 773 wells. Weighted 0.55/0.45 fusion reduced LB from ~7.7 to 7.2. Self-verifying physical constraints via TVT reconstruction with RMSE &lt;1ft auto-triggered override. Built 3D spatial interpolation model (6 strata × GBM) achieving MAE ≈ 0.01ft. 100+ hidden wells inference &lt;10 min.</p>
-          <div class="tags"><span>LightGBM</span><span>CatBoost</span><span>Particle Filter</span><span>GBM</span><span>Spatial</span></div>
-        </div>
-
-        <div class="proj">
           <h4><a href="https://github.com/shawn924/Li_Zexuan/tree/main/Ecommerce_rfmproject" target="_blank" rel="noopener">E-commerce RFM-I Precision Marketing</a></h4>
           <div class="meta">Project Lead &middot; Jan — Mar 2026</div>
-          <p class="desc">Built RFM-I multi-dimensional user value assessment framework improving on traditional RFM. Cross-analysis of purchasing power, behavior preferences, and user-product matching for segmentation. Designed ROI estimation model incorporating budget and pricing constraints — improved marginal ROI from 4.0% to 32.3%.</p>
+          <p class="desc">Built RFM-I multi-dimensional user value assessment framework improving on traditional RFM. Cross-analysis of purchasing power, behavior preferences, and user-product matching. ROI model with budget/price constraints lifted marginal ROI from 4.0% to 32.3%.</p>
           <div class="tags"><span>Python</span><span>RFM</span><span>User Segmentation</span><span>Marketing Analytics</span></div>
         </div>
 
         <div class="proj">
           <h4><a href="https://github.com/shawn924/Li_Zexuan/tree/main/biden_trump_sarcasm_project" target="_blank" rel="noopener">YouTube Political Discourse: NLP &amp; Sentiment</a></h4>
           <div class="meta">Core Member &middot; Nov 2025 — Feb 2026</div>
-          <p class="desc">Collected and cleaned YouTube comments on Trump &amp; Biden videos. Fine-tuned RoBERTa on ~10K labeled samples for sarcasm detection — F1 score 0.85. K-Means topic clustering to link sentiment patterns with political issues.</p>
+          <p class="desc">Collected and cleaned YouTube comments on Trump &amp; Biden videos. Fine-tuned RoBERTa on ~10K labeled samples for sarcasm detection — F1 0.85. K-Means topic clustering linking sentiment patterns with political issues.</p>
           <div class="tags"><span>RoBERTa</span><span>K-Means</span><span>NLP</span><span>Sentiment Analysis</span></div>
         </div>
 
         <div class="proj">
-          <h4><a href="https://github.com/shawn924/Li_Zexuan" target="_blank" rel="noopener">Additional Projects on GitHub</a></h4>
-          <p class="desc">TFT vs TST Crypto Forecasting, QLoRA Fine-tuning for Code Generation, Cellular Automata Housing Simulation, Portfolio VaR Analysis, Olist E-commerce Analysis. See GitHub for full list.</p>
-          <div class="tags"><span>PyTorch</span><span>Transformers</span><span>QLoRA</span><span>Spatial Analysis</span><span>Risk</span></div>
+          <h4><a href="https://github.com/shawn924/Li_Zexuan/tree/main/LoRA" target="_blank" rel="noopener">Qwen2.5-1.5B QLoRA Fine-tuning</a></h4>
+          <p class="desc">4-bit QLoRA on RTX 4060 8G — 18K Python code instructions, ~2 hours. Model shifted from educational verbosity to clean, production-ready code output.</p>
+          <div class="tags"><span>QLoRA</span><span>PEFT</span><span>bitsandbytes</span><span>LLM</span></div>
+        </div>
+
+        <div class="proj">
+          <h4><a href="https://github.com/shawn924/Li_Zexuan/tree/main/Crypto_TFT_vs_TST_Forecast" target="_blank" rel="noopener">TFT vs TST — Multi-Asset Crypto Forecasting</a></h4>
+          <p class="desc">Temporal Fusion Transformer vs Time Series Transformer on 260 crypto pairs, 38 features. TST outperforms TFT on all metrics; neither beats random walk.</p>
+          <div class="tags"><span>PyTorch Lightning</span><span>Transformers</span><span>Time Series</span></div>
+        </div>
+
+        <div class="proj">
+          <h4><a href="https://github.com/shawn924/Li_Zexuan/tree/main/Risk_Project" target="_blank" rel="noopener">Portfolio Risk Analysis — Three VaR Methods</a></h4>
+          <p class="desc">Mag-7 portfolio risk via Historical Simulation, Parametric VaR, and Monte Carlo. Kupiec POF backtesting, rolling 252-day VaR, risk decomposition — all from scratch.</p>
+          <div class="tags"><span>NumPy</span><span>SciPy</span><span>yfinance</span><span>Risk</span></div>
+        </div>
+
+        <div class="proj">
+          <h4><a href="https://github.com/shawn924/Li_Zexuan/tree/main/Spatial_Project_Cellular_Automata" target="_blank" rel="noopener">Cellular Automata — Housing Density Simulation</a></h4>
+          <p class="desc">CA model forecasting housing density under TOD policy in Utrecht. Logistic regression transitions, calibrated on 2010–2015, validated on 2017, projected to 2040.</p>
+          <div class="tags"><span>Spatial Analysis</span><span>Cellular Automata</span><span>Python</span></div>
+        </div>
+
+        <div class="proj">
+          <h4><a href="https://github.com/shawn924/Li_Zexuan/tree/main/olist_project" target="_blank" rel="noopener">Olist E-commerce Data Analysis</a></h4>
+          <p class="desc">End-to-end analysis of Brazilian e-commerce — order delays, regional trends, seller performance. SQL to visualization pipeline.</p>
+          <div class="tags"><span>Pandas</span><span>SQL</span><span>Matplotlib</span></div>
         </div>
       </div>
 
